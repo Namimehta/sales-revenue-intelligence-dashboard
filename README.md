@@ -24,8 +24,6 @@ The `data/` folder contains:
 - `SalesRep.csv` — salesperson dimension.
 - `Region.csv` — region dimension.
 
-Suggested model: star schema. Relate `Sales[OrderDate]` to `Date[Date]`, and connect Sales to Customer, Product, SalesRep, and Region using their respective keys/fields. The Sales table includes Region and SalesRep labels for beginner-friendly use; for a normalized model, create dimension relationships and hide duplicate descriptive columns.
-
 **Data note:** Currency values use ₹ purely as a synthetic presentation convention; this is not real company/customer data. All names and records are fictional.
 
 ## Key measures
@@ -60,19 +58,6 @@ The DAX file in `powerbi/DAX_Measures.txt` includes measures for total orders, w
 - Realized revenue from won orders: **₹530,625**.
 - Open pipeline value: **₹118,235**.
 
-These are descriptive results from randomly generated synthetic data, not real-world business claims. Validate the measures after importing the files into Power BI.
-
-## Build it in Power BI Desktop
-1. Extract the ZIP or open the project folder.
-2. In Power BI Desktop, select **Get data → Text/CSV** and import `data/Sales.csv`.
-3. Import `data/Date.csv`, `Customer.csv`, `Product.csv`, `SalesRep.csv`, and `Region.csv`.
-4. Set data types: OrderDate/Date as Date; quantities as whole numbers; monetary fields as decimal/currency; DiscountPct as decimal percentage.
-5. Create the relationships described above. Mark `Date` as the date table.
-6. Add measures from `powerbi/DAX_Measures.txt` (create one measure at a time).
-7. Build the pages described above and optionally apply `powerbi/theme.json` using **View → Themes → Browse for themes**.
-8. Validate the totals and use the preview image as a layout reference. The preview is a static concept image, not a Power BI `.pbix` file.
-9. Save your report as `Sales_Revenue_Intelligence.pbix`.
-
 ## Files
 - `powerbi/dashboard_preview.png` — static dashboard layout reference.
 - `powerbi/DAX_Measures.txt` — DAX measures.
@@ -81,11 +66,15 @@ These are descriptive results from randomly generated synthetic data, not real-w
 - `documentation/Project_Summary.pdf` — recruiter-friendly project summary.
 - `documentation/Build_Guide.pdf` — steps and portfolio publishing checklist.
 
-## Resume-ready project entry
 **Sales & Revenue Intelligence Dashboard | Power BI, DAX, Power Query, SQL**  
 Built a sales analytics project using 1,800 synthetic order records to track realized revenue, gross profit, win rate, average order value, and open pipeline. Designed a star-schema data model and KPI-focused dashboard concept to compare performance across time, region, product category, sales channel, and sales representatives. Added DAX measures and SQL queries for reusable analysis.
 
-Only list this project as a completed Power BI dashboard after you have built and validated the `.pbix` in Power BI Desktop. Until then, describe it as a **portfolio project in progress**.
-
-## Publishing it for recruiters
-This package is ready for GitHub. Create a **public repository** named `sales-revenue-intelligence-dashboard`, upload the project files, and add the repository URL to your resume. A public GitHub repository gives recruiters a stable link to the documentation, dataset, DAX, SQL, and preview. For an interactive report, publish the finished `.pbix` through Power BI Service only if your account and sharing permissions allow it; do not upload confidential employer data.
+**Portfolio Repository**
+This public repository contains my Sales & Revenue Intelligence portfolio project, built using synthetic sales data for analytics practice.
+Project resources:
+data/ — synthetic sales datasets
+powerbi/ — dashboard layout preview, DAX measures and theme
+sql/ — SQL analysis queries
+documentation/ — project summary and build guide
+**Current status: Project in progress.** The datasets, documentation and analysis resources are available; the interactive Power BI report is yet to be built and validated.
+All data is synthetic and does not represent real customers or business performance
