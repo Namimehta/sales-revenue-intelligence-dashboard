@@ -1,0 +1,14 @@
+{
+  "name": "Sales Revenue Intelligence",
+  "dataColors": [
+    "#2563EB",
+    "#14B8A6",
+    "#F59E0B",
+    "#8B5CF6",
+    "#EF4444",
+    "#64748B"
+  ],
+  "background": "#F4F6F8",
+  "foreground": "#14213D",
+  "tableAccent": "#2563EB"
+}

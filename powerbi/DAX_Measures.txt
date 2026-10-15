@@ -1,0 +1,45 @@
+-- Sales & Revenue Intelligence | Core DAX measures
+-- Create a relationship from Sales[OrderDate] to Date[Date] (many-to-one, single direction).
+-- Mark Date as the date table using Date[Date].
+
+Total Orders =
+DISTINCTCOUNT ( Sales[OrderID] )
+
+Won Orders =
+CALCULATE ( [Total Orders], Sales[OrderStatus] = "Won" )
+
+Open Orders =
+CALCULATE ( [Total Orders], Sales[OrderStatus] = "Open" )
+
+Lost Orders =
+CALCULATE ( [Total Orders], Sales[OrderStatus] = "Lost" )
+
+Realized Revenue =
+CALCULATE ( SUM ( Sales[NetSales] ), Sales[OrderStatus] = "Won" )
+
+Open Pipeline Value =
+CALCULATE ( SUM ( Sales[NetSales] ), Sales[OrderStatus] = "Open" )
+
+Gross Profit =
+CALCULATE ( SUM ( Sales[Profit] ), Sales[OrderStatus] = "Won" )
+
+Profit Margin % =
+DIVIDE ( [Gross Profit], [Realized Revenue] )
+
+Win Rate % =
+DIVIDE ( [Won Orders], [Total Orders] )
+
+Average Won Order Value =
+DIVIDE ( [Realized Revenue], [Won Orders] )
+
+Units Sold =
+CALCULATE ( SUM ( Sales[Quantity] ), Sales[OrderStatus] = "Won" )
+
+Revenue Previous Month =
+CALCULATE ( [Realized Revenue], DATEADD ( 'Date'[Date], -1, MONTH ) )
+
+Revenue MoM Change % =
+DIVIDE ( [Realized Revenue] - [Revenue Previous Month], [Revenue Previous Month] )
+
+Revenue YTD =
+TOTALYTD ( [Realized Revenue], 'Date'[Date] )

@@ -1,0 +1,13 @@
+{
+  "records": 1800,
+  "date_range": "2024-01-01 to 2025-12-31",
+  "realized_revenue": 530625.49,
+  "gross_profit": 284536.87,
+  "open_pipeline": 118234.53,
+  "win_rate": 0.7283,
+  "top_region": "West",
+  "top_category": "Technology",
+  "top_channel": "Website",
+  "top_sales_rep": "Aarav Shah",
+  "currency_note": "\u20b9 is used as a synthetic presentation convention, not a real business currency source."
+}
